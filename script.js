@@ -1,6 +1,6 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-var password= generatepassword("password");
+var password= document.querySelector("generatepassword");
 var characterAmountNumber= document.querySelector("characterAmountNumber");
 var includeNumbers= document.querySelector("includeNumbers");
 var includeUppercase= document.querySelector("includeUppercase");
@@ -48,7 +48,7 @@ function arrayfromLowToHigh(low, high){
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
-criteria.addEventListener("submit" e =>{
+criteria.addEventListener("submit", e =>{
   e.preventDefault()
   var characterAmount= characterAmountNumber.value
   var includeNumbers= includeNumberselement.checked
