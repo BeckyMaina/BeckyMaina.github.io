@@ -48,7 +48,7 @@ function arrayfromLowToHigh(low, high){
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
-criteria.addEventListener("submit", e =>{
+div.addEventListener("submit", e =>{
   e.preventDefault()
   var characterAmount= characterAmountNumber.value
   var includeNumbers= includeNumberselement.checked
