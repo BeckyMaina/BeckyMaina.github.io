@@ -6,6 +6,14 @@ var includeNumbers= document.querySelector("includeNumbers");
 var includeUppercase= document.querySelector("includeUppercase");
 var includelowercase= document.querySelector("includelowercase");
 var includesymbol= document.querySelector("includesymbol");
+
+var randomfunction= {
+  upper: getRandomupper,
+  lower: getRandomlower,
+  number: getRandomnumber,
+  symbol: getRandomsymbol
+};
+
 var UPPERCASE_CHAR_CODES= arrayfromLowToHigh(65,90);
 var LOWERCASE_CHAR_CODES= arrayfromLowToHigh(97,122);
 var NUMBERS_CHAR_CODES= arrayfromLowToHigh(48, 57);
@@ -18,41 +26,60 @@ var SYMBOL_CHAR_CODES= arrayfromLowToHigh(33, 47).concat(
 )
 
 // Write password to the #password input
-function writePassword() {
-  var password = generatePassword(characterAmountNumber, includeNumbers, includeUppercase, includelowercase, includesymbol);
-  let charcodes= LOWERCASE_CHAR_CODES
-  if (includeUppercase) charcodes= charcodes.concat
-  (UPPERCASE_CHAR_CODES)
-  if (includeNumbers) charcodes = charcodes.concat(NUMBERS_CHAR_CODES)
-  if (includeSymbol) charcodes= charcodes.concat(SYMBOL_CHAR_CODES)
+function writePassword(characterAmountNumber, includeNumbers, includeUppercase, includelowercase, includesymbol) {
+  var password = generatePassword();
+  let generatedpassword= ''
 
-  var passwordcharacters= []
-  for (i = 0; i < characterAmount; i++){
-    var characterCodes= charcodes[Math.floor(Math.random()* charcodes.length)]
-    passwordcharacters.push(string.fromcharcodes(characterCodes))
+  var typescount= characterAmount + number + upper + lower + symbol;
+
+  var typesarray= [{characterAmount}, {number}, {upper}, {lower}, {symbol}].filter
+  (
+    item => Object.value(item)[0] 
+  );
+
+  if(typescount ===0) {
+    return '';
   }
-  return passwordcharacters.join('')
+
+  for (i = 0; i < characterAmount; i+= typescount){
+    typesarray.forEach(type =>{
+      var functionName= object.keys(type)[0];
+
+      generatedpassword += Randomfunction[functionName]();
+
+    });
+  }
+
+  var finalpassword= generatedpassword.slice(0, characterAmount);
+
+  return finalpassword;
 }
 
-function arrayfromLowToHigh(low, high){
+ function arrayfromLowToHigh(low, high){
   var array= []
   for (let i = low; i <= high; i++) {array.push(i)
   }
   return array
-}
+ }
 
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
-
-div.addEventListener("submit", e =>{
-  e.preventDefault()
+generateBtn.addEventListener("click", () => {
   var characterAmount= characterAmountNumber.value
   var includeNumbers= includeNumberselement.checked
   var includeUppercase= includeUppercaseelement.checked
   var includesymbol= includesymbolelement.checked
   var password= genertepassword(characterAmount, includeNumbers, includeUppercase, includesymbol) 
-})
+
+password.innerText= generatepassword(
+  characterAmount,
+  number,
+  upper,
+  lower,
+  symbol
+);
+
+});
