@@ -1,18 +1,5 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-var password= document.querySelector("generatepassword");
-var characterAmountNumber= document.querySelector("characterAmountNumber");
-var includeNumbers= document.querySelector("includeNumbers");
-var includeUppercase= document.querySelector("includeUppercase");
-var includelowercase= document.querySelector("includelowercase");
-var includesymbol= document.querySelector("includesymbol");
-
-var randomfunction= {
-  upper: getRandomupper,
-  lower: getRandomlower,
-  number: getRandomnumber,
-  symbol: getRandomsymbol
-};
 
 var UPPERCASE_CHAR_CODES= arrayfromLowToHigh(65,90);
 var LOWERCASE_CHAR_CODES= arrayfromLowToHigh(97,122);
@@ -26,31 +13,23 @@ var SYMBOL_CHAR_CODES= arrayfromLowToHigh(33, 47).concat(
 )
 
 // Write password to the #password input
-function writePassword(characterAmountNumber, includeNumbers, includeUppercase, includelowercase, includesymbol) {
+function writePassword(){
   var password = generatePassword();
-  let generatedpassword= ''
+  
+  var passwordText = document.querySelector("#password");
 
-  var typescount= characterAmount + number + upper + lower + symbol;
+  passwordText.value = password;
+}
 
-  var typesarray= [{characterAmount}, {number}, {upper}, {lower}, {symbol}].filter
-  (
-    item => Object.value(item)[0] 
-  );
+// Add event listener to generate button
+generateBtn.addEventListener("click", writePassword)
 
-  if(typescount ===0) {
-    return '';
-  }
+function generatePassword() {
+  debugger
+  var passwordlength= prompt("how many characters do you want in your password")
+  var uppercase= confirm("do you want to include uppercase")
 
-  for (i = 0; i < characterAmount; i+= typescount){
-    typesarray.forEach(type =>{
-      var functionName= object.keys(type)[0];
-
-      generatedpassword += Randomfunction[functionName]();
-
-    });
-  }
-
-  var finalpassword= generatedpassword.slice(0, characterAmount);
+  var finalpassword= "hjhfjf"
 
   return finalpassword;
 }
@@ -62,24 +41,4 @@ function writePassword(characterAmountNumber, includeNumbers, includeUppercase, 
   return array
  }
 
-  var passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
-
-// Add event listener to generate button
-generateBtn.addEventListener("click", () => {
-  var characterAmount= characterAmountNumber.value
-  var includeNumbers= includeNumberselement.checked
-  var includeUppercase= includeUppercaseelement.checked
-  var includesymbol= includesymbolelement.checked
-  var password= genertepassword(characterAmount, includeNumbers, includeUppercase, includesymbol) 
-
-password.innerText= generatepassword(
-  characterAmount,
-  number,
-  upper,
-  lower,
-  symbol
-);
-
-});
+  

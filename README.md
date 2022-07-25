@@ -1,12 +1,21 @@
 # improved-octo-waddle
 Module 3- password generator application project
-## index.html
-I added a few lines of code to create the prompts for password criteria that the user should select to include in their password.
-!["this screenshot shows the code added to create the prompt for password criteria"](images/index.html%20criteria%20code.png)
 
-## style.css
-I added a few modifications for the code added in the index.html file. 
-Modifications added were for - class: criteria & Number-input, <label>
-!["this screenshot shows the modifications to the style.css file for the above mentioned changes to the index.html file"](images/style.css%20modifications.png)
+this project is about creating a password generating application.
+when a user clicks the generate password button its supposed to create a series of prompts for password criteria where the user is to choose the criterias to include in their password.
+the criterias include:
+-Amount of characters
+-Whether or not to include numbers
+-Whether or not to include uppercase
+-Whether or not to include lowercase
+-Whether or not to include symbols
 
-## script.js
+After the user chooses all the criterias to include in their password then the application generates a password according to the criterias selected.
+
+## links to screenshots
+
+
+## link to Github
+
+## URL to deployed application
+

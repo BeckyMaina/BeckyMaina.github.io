@@ -118,25 +118,6 @@ button[disabled] {
   overflow: hidden;
 }
 
-.criteria{
-  display: grid;
-  grid-template-columns: auto auto;
-  flex-direction: row;
-  row-gap: 1rem;
-  column-gap: 2rem;
-  justify-content: center;
-  align-items: center;
-}
-
-label{
-  font-weight: bold;
-  font-size: medium;
-}
-
-.Number-input{
-  width: 3rem;
-}
-
 @media (max-width: 690px) {
   .btn {
     font-size: 1rem;
