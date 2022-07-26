@@ -20,15 +20,23 @@ generateBtn.addEventListener("click", writePassword);
 
 function generatePassword() {
   debugger
-  var passwordlength= prompt("how many characters do you want in your password", min= 8, max= 128)
-  var numbers= confirm("do you want to include numbers")
-  var uppercase= confirm("do you want to include uppercase")
-  var lowercase= confirm("do you want to include lowercase")
-  var symbols= confirm("do you want to include symbols")
+  var passwordlength= prompt("how many characters do you want in your password")
+  var includeNumbers= confirm("do you want to include numbers")
+  var includeUppercase= confirm("do you want to include uppercase")
+  var includelowercase= confirm("do you want to include lowercase")
+  var includeSymbol= confirm("do you want to include symbols")
 
-  var finalpassword= ""
+  let charcodes= LOWERCASE_CHAR_CODES
+  if (includeUppercase) charcodes= charcodes.concat
+  (UPPERCASE_CHAR_CODES)
+  if (includeNumbers) charcodes = charcodes.concat(NUMBERS_CHAR_CODES)
+  if (includeSymbol) charcodes= charcodes.concat(SYMBOL_CHAR_CODES)
 
-    
-
+  var finalpassword= []
+  for (i = 0; i < passwordlength; i++){
+    var characterCodes= charcodes[Math.floor(Math.random()* charcodes.length)]
+    passwordcharacters.push(string.fromcharcodes(characterCodes)) 
+  }
+ 
   return finalpassword;
 }
