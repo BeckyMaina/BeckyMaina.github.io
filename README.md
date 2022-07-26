@@ -13,10 +13,11 @@ the criterias include:
 After the user chooses all the criterias to include in their password then the application generates a password according to the criterias selected.
 
 ## links to screenshots
-(images/screenshot.png)
+(images/screenshot 1.png)
 
 ## link to Github
  https://github.com/BeckyMaina/improved-octo-waddle
 
 ## URL to deployed application
+https://beckymaina.github.io/
 
