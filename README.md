@@ -1,4 +1,4 @@
-# improved-octo-waddle
+# BeckyMaina.github.io
 Module 3- password generator application project
 
 this project is about creating a password generating application.
